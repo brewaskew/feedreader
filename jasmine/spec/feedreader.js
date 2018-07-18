@@ -57,8 +57,6 @@ $(function () {
     /* Write a new test suite named "The menu" */
     describe('The menu', function () {
 
-
-
         /* Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -106,7 +104,7 @@ $(function () {
          */
         it('feed has at least one entry', function (done) {
             const feed = document.getElementsByClassName('feed');
-            
+
             expect(feed["0"].children["0"].children["0"].className).toBe('entry');
             done();
         });
@@ -114,14 +112,14 @@ $(function () {
 
     /* Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function () {
-        let feed, feed1Text, feed2Text ;
-        
+        let feed, feed1Text, feed2Text;
+
         beforeEach(function (done) {
-            loadFeed(0, function() {
+            loadFeed(0, function () {
                 feed = document.getElementsByClassName('feed');
                 feed1Text = feed["0"].innerText;
 
-                loadFeed(1, function() {
+                loadFeed(1, function () {
                     feed = document.getElementsByClassName('feed');
                     feed2Text = feed["0"].innerText;
                     done();
@@ -129,11 +127,11 @@ $(function () {
             });
         });
 
-    /* Write a test that ensures when a new feed is loaded
-     * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
-     */
-        it('feed changes when a new feed is loaded', function(done) {
+        /* Write a test that ensures when a new feed is loaded
+         * by the loadFeed function that the content actually changes.
+         * Remember, loadFeed() is asynchronous.
+         */
+        it('feed changes when a new feed is loaded', function (done) {
             expect(feed1Text).not.toBe(feed2Text);
             done();
         });
