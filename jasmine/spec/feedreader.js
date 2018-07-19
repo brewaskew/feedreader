@@ -25,7 +25,7 @@ $(function () {
          */
         it('are defined', function () {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds.length).toBeGreaterThan(0);
         });
 
         /* Write a test that loops through each feed
@@ -35,7 +35,7 @@ $(function () {
         it('all feeds have a url', function () {
             for (let feed in allFeeds) {
                 expect(allFeeds[feed].url).toBeDefined();
-                expect(allFeeds[feed].url.length).not.toBe(0);
+                expect(allFeeds[feed].url.length).toBeGreaterThan(0);
             }
         });
 
@@ -46,7 +46,7 @@ $(function () {
         it('all feeds have a name', function () {
             for (let feed in allFeeds) {
                 expect(allFeeds[feed].name).toBeDefined();
-                expect(allFeeds[feed].name.length).not.toBe(0);
+                expect(allFeeds[feed].name.length).toBeGreaterThan(0);
             }
         });
 
@@ -73,7 +73,7 @@ $(function () {
         it('menu changes state when menu icon clicked', function () {
             const menuButton = $('.menu-icon-link');            
             let test = $('body').hasClass('menu-hidden');
-            
+
             expect(test).toBe(true);
             menuButton.click();
             test = $('body').hasClass('menu-hidden');
