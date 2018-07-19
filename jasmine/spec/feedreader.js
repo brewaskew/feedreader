@@ -87,7 +87,7 @@ $(function () {
     /* Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function () {
         const id = 0;
-
+        
         beforeEach(function(done) {
             loadFeed(0, done);
         });
