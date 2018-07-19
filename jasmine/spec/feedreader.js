@@ -88,11 +88,8 @@ $(function () {
     describe('Initial Entries', function () {
         const id = 0;
 
-        beforeEach(function (done) {
-
-            loadFeed(0, function () {
-                done();
-            });
+        beforeEach(function(done) {
+            loadFeed(0, done);
         });
 
         /* Write a test that ensures when the loadFeed
